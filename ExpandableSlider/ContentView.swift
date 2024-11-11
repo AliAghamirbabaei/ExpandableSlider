@@ -14,8 +14,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 100.0) {
-                CustomSlider(title: "Backgroud Volume", icon: "hifispeaker", value: $backgroundVolume, in: 0...100, config: .init(inActiveTint: .black.opacity(0.06), activeTint: .blue)) {
+            TabView {
+                CustomSlider(title: "Backgroud Volume", icon: "hifispeaker", value: $backgroundVolume, in: 0...100, config: .init(inActiveTint: .black.opacity(0.06), activeTint: .red)) {
                     HStack {
                         Image(systemName: "speaker.wave.3.fill", variableValue: backgroundVolume / 100)
                         
@@ -25,6 +25,7 @@ struct ContentView: View {
                     }
                     .padding(.horizontal, 20.0)
                 }
+                .padding(.horizontal, 20.0)
                 
                 CustomSlider(title: "Vocal Volume", icon: "music.mic", value: $vocalVolume, in: 0...100, config: .init(inActiveTint: .black.opacity(0.06), activeTint: .purple)) {
                     HStack {
@@ -36,8 +37,9 @@ struct ContentView: View {
                     }
                     .padding(.horizontal, 20.0)
                 }
+                .padding(.horizontal, 20.0)
                 
-                CustomSlider(title: "Guitar Volume", icon: "guitars", value: $guitarVolume, in: 0...100, config: .init(inActiveTint: .black.opacity(0.06), activeTint: .red)) {
+                CustomSlider(title: "Guitar Volume", icon: "guitars", value: $guitarVolume, in: 0...100, config: .init(inActiveTint: .black.opacity(0.06), activeTint: .blue)) {
                     HStack {
                         Image(systemName: "speaker.wave.3.fill", variableValue: guitarVolume / 100)
                         
@@ -47,8 +49,9 @@ struct ContentView: View {
                     }
                     .padding(.horizontal, 20.0)
                 }
+                .padding(.horizontal, 20.0)
             }
-            .padding(15.0)
+            .tabViewStyle(.page(indexDisplayMode: .always))
             .navigationTitle("Expandaable Slider")
         }
     }

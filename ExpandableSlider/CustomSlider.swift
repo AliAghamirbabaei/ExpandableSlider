@@ -36,7 +36,7 @@ struct CustomSlider<Overlay: View>: View {
                 Text(title)
                     .font(.title3)
             }
-            .padding(.bottom, isActive ? 0.0 : -10.0)
+            .padding(.bottom, isActive ? 0.0 : -20.0)
             .animation(.snappy, value: isActive)
             
             GeometryReader {
